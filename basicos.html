@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <h1>Fundamentos JavaScript</h1>
+    <script>
+      var musica = "Rock";
+      console.log("Variable musica antes del bloque", musica);
+
+      {
+        var musica = "Pop";
+        console.log("Variable musica dentro del bloque", musica);
+      }
+
+      console.log("Variable musica despues del bloque", musica);
+      console.log("**********let************");
+      let musica2 = "Rock";
+      console.log("Variable musica antes del bloque", musica2);
+      {
+        let musica2 = "Pop";
+        console.log("Variable musica dentro del bloque", musica2);
+      }
+
+      console.log("Variable musica despues del bloque", musica2);
+
+      // let nombre = "gaston";
+      // let apellido= "romero";
+      // console.log(nombre, apellido);
+      // let saludo = "Hola mi nombre es " + nombre + " " apellido
+      // console.log(saludo);
+      let nombre = "gaston";
+      let apellido = "romero";
+
+      let saludo = `Hola mi nombre es ${nombre} ${apellido}`;
+      console.log(saludo);
+
+      let verdadero = "true";
+      let falso = "false";
+      console.log(verdadero, falso);
+
+      let nulo = null;
+      console.log(nulo);
+
+      function estoEsUnaFuncion() {
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+      }
+
+      estoEsUnaFuncion();
+
+      function estaFuncionDevuelveValor() {
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+        return "La funcion ha retornado una cadena de texto";
+      }
+
+      console.log(estaFuncionDevuelveValor);
+
+      let ValorDeFuncion = estaFuncionDevuelveValor();
+      console.log(ValorDeFuncion);
+
+      let z = new String("hola");
+      console.log(z);
+
+      let edad = 25;
+
+      if (edad >= 17) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres menor de edad");
+      }
+
+      let = eresMayor =
+        edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
+      console.log(eresMayor);
+
+      let dia = 20;
+
+      switch (dia) {
+        case 0:
+          console.log("Domingo");
+          break;
+        case 1:
+          console.log("Lunes");
+          break;
+        case 2:
+          console.log("Martes");
+          break;
+        case 3:
+          console.log("Miercoles");
+          break;
+        case 4:
+          console.log("Jueves");
+          break;
+        case 5:
+          console.log("Viernes");
+          break;
+        case 6:
+          console.log("Sabado");
+          break;
+        default:
+          console.log("El día no existe");
+          break;
+      }
+
+      // REVISAR EN DONDE LLAMABA EL SWITCH!!!
+
+      let i = 0;
+      for (let i = 0; i < 10; i++) {
+        console.log("for" + i);
+      }
+
+      const gas = {
+        nombre: "Gaston",
+        apellido: "Romero",
+        edad: 34,
+      };
+
+      for (const key in gas) {
+        console.log(`key:${key}, value:${gas[key]}`);
+      }
+
+      let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+      for (const element of numeros) {
+        console.log(element);
+      }
+
+      try {
+        let numero = "10";
+
+        if (isNaN(numero)) {
+          throw new Error("El caracter incluido no es un número");
+        }
+        console.log(numero * numero);
+      } catch (error) {
+        console.log(`Se produjo el siguiente error: ${error}`);
+      }
+
+      const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let i = 0; i <= numbers.length; i++) {
+        console.log(numbers[i]);
+      }
+
+      function sumar(a, b, ...c) {
+        let resultado = a + b;
+
+        c.forEach(function (n) {
+          resultado += n;
+        });
+        return resultado;
+      }
+      console.log(sumar(1, 2, 3));
+
+      const arr1 = [1, 2, 3, 4, 5];
+      const arr2 = [6, 7, 8, 9, 0];
+
+      console.log(arr1, arr2);
+      const arr3 = [...arr1, ...arr2];
+      console.log(arr3);
+
+      // function Animal(nombre, edad) {
+      //   this.nombre = nombre;
+      //   this.edad = edad;
+      // }
+
+      // Animal.prototype.sonar = function () {
+      //   console.log("Miau Miau Miau");
+      // };
+
+      // console.log(Animal);
+
+      // const karey = new Animal("Karey", "7");
+      // console.log(karey);
+      // karey.sonar();
+
+      class Animal {
+        constructor(nombre, genero) {
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+
+        saludar() {
+          console.log(`Hola me llamo ${this.nombre}`);
+        }
+        ladrar() {
+          console.log("Guau guau");
+        }
+
+        static queEres() {
+          console.log(
+            "Soy un perro de tamaño mediano que le gusta jugar y ladrar mucho"
+          );
+        }
+      }
+
+      Animal.queEres();
+      const felipe = new Animal("Felipe", "macho");
+      console.log(felipe);
+      felipe.saludar();
+      felipe.ladrar();
+
+      console.log(Date());
+
+      // window.alert("Hola esto es una alerta");
+      // confirm("Esto es una confirmación");
+      // prompt("Esto es un prompt, el usuario tiene que ingresar un valor");
+
+      let alerta = alert("Hola esto es una alerta");
+      confirmacion = confirm("Esto es una confirmación");
+      aviso = prompt(
+        "Esto es un aviso, el usuario tiene que ingresar algun valor"
+      );
+
+      console.log(alerta);
+      console.log(confirmacion);
+      console.log(aviso);
+
+      // Función Anónima Autoejecutable
+      (function () {
+        console.log("Mi primer IIFE");
+      })();
+
+      // EJERCICIOS!!!
+      // 1) Programa una funciòn que cuente el número de caracteres de una cadena de texto Ej: miFuncion("Hola Mundo") devolverá 10*
+      // 2)Programam una función que te devuelva el texto recortado según el número de caracteres indicados Ej: miFuncion("Hola Mundo", 4) devolverá "Hola"
+      // 3)Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter Ej: miFuncion("Hola que tal", " ") devolverá [`hola´`que´`tal´]
+      // 4)4) Programa una función que repita un texto X veces,Ej: miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    </script>
+  </body>
+</html>
