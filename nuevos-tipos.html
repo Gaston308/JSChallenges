@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevos Tipos de Datos en JavaScript</title>
+  </head>
+  <body>
+    <h1>Nuevos Tipos de Datos en JavaScript</h1>
+    <script>
+      // const NOMBRE = Symbol();
+
+      // const persona = {
+      //   [NOMBRE]: "Gastón",
+      // };
+
+      // console.log(persona);
+
+      // persona.NOMBRE = "Leonardo Romero";
+      // console.log(persona);
+
+      // const set = new Set([
+      //   1,
+      //   2,
+      //   3,
+      //   3,
+      //   4,
+      //   5,
+      //   true,
+      //   false,
+      //   true,
+      //   "hola",
+      //   "HOLA",
+      //   {},
+      //   {},
+      // ]);
+      // console.log(set);
+
+      // const set2 = new Set();
+      // set2.add(1);
+      // set2.add(2);
+      // set2.add(3);
+      // set2.add(2);
+      // set2.add(true);
+      // set2.add(false);
+      // set2.add(true);
+
+      // console.log(set2);
+
+      // console.log("Recorriendo set");
+      // for (item of set) {
+      //   console.log(item);
+      // }
+
+      // console.log("Recorriendo set2");
+      // set2.forEach((item) => console.log(item));
+
+      // let arr = Array.from(set);
+      // console.log(arr);
+      // console.log(arr[0]);
+
+      // console.log(set);
+      // console.log(set.has("hola"));
+      // console.log(set.has(19));
+
+      // let mapa = new Map();
+      // mapa.set("Nombre", "Gastón");
+      // mapa.set("Apellido", "Romero");
+      // mapa.set("Edad", 34);
+
+      // console.log(mapa);
+      // console.log(mapa.size);
+      // console.log(mapa.has("correo"));
+      // console.log(mapa.has("Nombre"));
+      // console.log(mapa.get("Nombre"));
+      // mapa.delete("Apellido");
+      // console.log(mapa);
+
+      // const ws = new WeakSet();
+      // let valor1 = { valor1: 1 };
+      // let valor2 = { valor2: 2 };
+      // let valor3 = { valor3: 3 };
+
+      // ws.add(valor1);
+      // ws.add(valor2);
+
+      // console.log(ws);
+
+      // const wm = new WeakMap();
+      // let llave1 = {};
+      // let llave2 = {};
+      // let llave3 = {};
+
+      // wm.set(llave1, 1);
+      // wm.set(llave2, 2);
+
+      // console.log(wm);
+
+      // // setInterval(() => console.log(wm), 1000);
+
+      // setTimeout(() => {
+      //   llave1 = null;
+      //   llave2 = null;
+      //   llave3 = null;
+      // }, 5000);
+
+      // const iterable = [1, 2, 3, 4, 5];
+      // const iterador = iterable[Symbol.iterator]();
+
+      // console.log(iterable);
+      // console.log(iterador);
+
+      // let next = iterador.next;
+
+      // while (!next.done) {
+      //   console.log(next.value);
+      //   next = iterador.next();
+      // }
+
+      function* iterable() {
+        yield "hola";
+        console.log("Hola consola!!");
+        yield "hola2";
+        console.log("Hola de nuevo consola :)");
+        yield "hola3";
+        yield "hola4";
+      }
+
+      let iterador = iterable();
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+      // console.log(iterador.next());
+
+      for (let y of iterador) {
+        console.log(y);
+      }
+
+      const arr = [...iterable()];
+      console.log(arr);
+
+      function cuadrado(valor) {
+        setTimeout(() => {
+          return console.log({ valor, resultado: valor * valor });
+        }, Math.random * 1000);
+      }
+
+      function* generator() {
+        console.log("Inicia Generator");
+        yield cuadrado(1);
+        yield cuadrado(2);
+        yield cuadrado(3);
+        yield cuadrado(4);
+        yield cuadrado(5);
+        yield cuadrado(6);
+        console.log("Termina Generator");
+      }
+
+      let gen = generator();
+
+      for (let y of gen) {
+        console.log(y);
+      }
+
+      const persona = {
+        nombre: "",
+        apellido: "",
+        edad: 0,
+      };
+
+      const manejador = {
+        set(obj, prop, valor) {
+          obj[prop] = valor;
+        },
+      };
+
+      const gaston = new Proxy(persona, manejador);
+      gaston.nombre = "Gastón";
+      gaston.apellido = "Romero";
+      gaston.edad = 34;
+
+      console.log(gaston);
+
+      const objUsuarios = {};
+      console.log(objUsuarios);
+      const usuarios = ["Gastón", "Noelia", "Agustin", "Lucia"];
+
+      usuarios.forEach(
+        (usuarios, index) => (objUsuarios[`id_${index}`] = usuarios)
+      );
+      console.log(objUsuarios);
+    </script>
+  </body>
+</html>
