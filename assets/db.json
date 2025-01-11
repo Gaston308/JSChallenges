@@ -1,0 +1,66 @@
+{
+  "personajes": [
+    {
+      "id": "1",
+      "nombre": "goku",
+      "raza": "saiyan"
+    },
+    {
+      "id": "2",
+      "nombre": "vegeta",
+      "raza": "saiyan"
+    },
+    {
+      "id": "3",
+      "nombre": "picoro",
+      "raza": "namek"
+    },
+    {
+      "id": "4",
+      "nombre": "krilin",
+      "raza": "terricola"
+    },
+    {
+      "id": "5",
+      "nombre": "gohan",
+      "raza": "saiyan"
+    },
+    {
+      "id": "a278",
+      "nombre": "ten shin han",
+      "raza": "terricola"
+    },
+    {
+      "id": "c821",
+      "nombre": "trunks",
+      "raza": "saiyan"
+    }
+  ],
+  "enemigos": [
+    {
+      "id": "1",
+      "nombre": "majin-boo",
+      "raza": "demonio"
+    },
+    {
+      "id": "2",
+      "nombre": "babidi",
+      "raza": "mago"
+    },
+    {
+      "id": "3",
+      "nombre": "freezer",
+      "raza": "demonio"
+    },
+    {
+      "id": "4",
+      "nombre": "cell",
+      "raza": "androide"
+    },
+    {
+      "id": "5",
+      "nombre": "dabura",
+      "raza": "demonio"
+    }
+  ]
+}

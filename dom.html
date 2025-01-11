@@ -10,6 +10,11 @@
         --dark-color: #222;
       }
 
+      .cards {
+        border: thin solid var(--dark-color);
+        padding: 1rem;
+      }
+
       .card {
         display: inline-block;
         background-color: var(--dark-color);
@@ -34,6 +39,24 @@
 
       .sepia {
         filter: sepia(1);
+      }
+
+      .eventos-flujo div {
+        padding: 4rem;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .uno {
+        background-color: yellow;
+      }
+
+      .dos {
+        background-color: gold;
+      }
+
+      .tres {
+        background-color: lightyellow;
       }
     </style>
   </head>
@@ -104,6 +127,44 @@
         <figcaption>Nature</figcaption>
       </figure>
     </section>
-    <script src="js/dom.js" type="module"></script>
+    <h3>Eventos en JavaScript</h3>
+    <h4>Manejadores de Eventos</h4>
+    <button onclick="holaMundo()">Evento con Atributo HTML</button>
+    <br /><br />
+    <button id="evento-semantico">Evento con Manejador Semántico</button>
+    <br /><br />
+    <button id="evento-multiple">Evento con Manejador Multiple</button>
+    <br /><br />
+    <button id="evento-remover">
+      Removiendo Eventos con Manejadores Multiples
+    </button>
+    <b3></b3>
+    <b3></b3>
+    <b3></b3>
+    <b3></b3>
+    <h4>Flujo de Eventos</h4>
+    <section class="eventos-flujo">
+      <div class="uno">
+        1
+        <div class="dos">
+          2
+          <div class="tres">
+            3
+            <a href="https://jonmircha.com/" target="_blank" rel="noopener"
+              >jonmircha.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <br /><br />
+    <h3>Manejo del BOM</h3>
+    <button id="abrir-ventana">Abrir Ventana</button>
+    <br /><br />
+    <button id="cerrar-ventana">Cerrar Ventana</button>
+    <br /><br />
+    <button id="imprimir-ventana">Imprimir Ventana</button>
+    <br /><br />
+    <script src="js/dom.js" type="text/javascript"></script>
   </body>
 </html>
