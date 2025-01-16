@@ -34,6 +34,16 @@
       "id": "c821",
       "nombre": "trunks",
       "raza": "saiyan"
+    },
+    {
+      "nombre": "yamsha",
+      "raza": "terricola",
+      "id": "3cae"
+    },
+    {
+      "nombre": "dende",
+      "raza": "namek",
+      "id": "0c19"
     }
   ],
   "enemigos": [
